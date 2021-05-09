@@ -1,9 +1,7 @@
+import com.globant.bootcamp.Farmer;
 import com.globant.bootcamp.abstracts.Animal;
-import com.globant.bootcamp.animals.Cat;
-import com.globant.bootcamp.animals.Dog;
-import com.globant.bootcamp.animals.Duck;
+import com.globant.bootcamp.animals.*;
 import com.globant.bootcamp.enums.Gender;
-import com.globant.bootcamp.animals.Chicken;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,5 +30,15 @@ public class Main {
             System.out.println(animal.getGender());
             System.out.println("-----------------");
         }
+
+        HenHouse henHouse= HenHouse.getInstance();//in this way it will invoke the function to perform a single instance
+        Farmer farmer = new Farmer(henHouse.henses);
+        farmer.gatherEggs();
+        farmer.fillinBox();
+        farmer.showBoxes();
+
     }
+
+
 }
+

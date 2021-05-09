@@ -1,9 +1,9 @@
 package com.globant.bootcamp.animals;
 
+import com.globant.bootcamp.enums.Color;
 import com.globant.bootcamp.enums.Gender;
 import com.globant.bootcamp.abstracts.Bird;
 import com.globant.bootcamp.interfaces.Aquatic;
-import com.globant.bootcamp.interfaces.Terrestrial;
 
 public class Duck extends Bird implements Aquatic {
 
@@ -38,7 +38,7 @@ public class Duck extends Bird implements Aquatic {
 
     @Override
     public Egg gaveBirth() {
-        return new Egg(new Duck(Gender.MALE));
+        return new Egg(new Duck(Gender.MALE), Color.WHITE);
     }
 
     @Override
