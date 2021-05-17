@@ -2,9 +2,15 @@ import com.globant.bootcamp.Farmer;
 import com.globant.bootcamp.abstracts.Animal;
 import com.globant.bootcamp.animals.*;
 import com.globant.bootcamp.enums.Gender;
+import java.util.logging.Logger;
 
 public class Main {
+
+    private static Logger logger = Logger.getLogger(Farmer.class.getName());
+
     public static void main(String[] args) {
+
+
         Animal[] animals = new Animal[4];
 
         Chicken gallina = new Chicken(Gender.FEMALE);
@@ -24,14 +30,16 @@ public class Main {
         Main.singAnimals(animals);
     }
 
-    private static void singAnimals(Animal[] animalBox){
-        for(Animal animal : animalBox){
+    private static void singAnimals(Animal[] animalBox) {
+        for (Animal animal : animalBox) {
             animal.makeSound();
             System.out.println(animal.getGender());
             System.out.println("-----------------");
         }
 
-        HenHouse henHouse= HenHouse.getInstance();//in this way it will invoke the function to perform a single instance
+        logger.info("\n" + "starting application from main");
+        // HenHouse henHouse= HenHouse.getInstance();//in this way it will invoke the function to perform a single instance
+        HenHouse henHouse = new HenHouse();
         Farmer farmer = new Farmer(henHouse.henses);
         farmer.gatherEggs();
         farmer.fillinBox();

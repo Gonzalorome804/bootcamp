@@ -3,8 +3,6 @@ package com.globant.bootcamp;
 import com.globant.bootcamp.animals.Egg;
 import com.globant.bootcamp.enums.Color;
 
-import java.util.Map;
-
 public class CartonBox {
     Color color;
     public Egg[] ability = new Egg[30];
@@ -25,7 +23,7 @@ public class CartonBox {
     }
 
     @Override
-    public String toString() { //print the "ability" the right way
+    public String toString() { //print the "ability" appropriate form
         String neatBox = "";
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {

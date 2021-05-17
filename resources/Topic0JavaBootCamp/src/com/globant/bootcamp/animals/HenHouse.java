@@ -17,10 +17,10 @@ public class HenHouse {
             this.henses[i] = new Hens(Gender.FEMALE, Color.WHITE);
         }
     }
-    public static HenHouse getInstance(){ //the "singleton" pattern is applied
+    /*public static HenHouse getInstance(){ //the "singleton" pattern is applied
         if (instance== null){
             instance = new HenHouse();
         }
         return instance;
-    }
+    }*/
 }

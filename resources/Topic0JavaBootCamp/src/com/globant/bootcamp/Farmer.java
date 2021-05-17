@@ -2,13 +2,15 @@ package com.globant.bootcamp;
 
 import com.globant.bootcamp.animals.Egg;
 import com.globant.bootcamp.animals.Hens;
-import com.globant.bootcamp.enums.Color;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Farmer {
+
+    private static final Logger logger = Logger.getLogger(Farmer.class.getName());
+
     public List<CartonBox> cartonBoxes = new ArrayList<>();
     public Hens[] henses;
     public Egg[] eggs;
@@ -38,7 +40,7 @@ public class Farmer {
             } else { // if addEggs return false
                 cartonBoxes.add(cartonBox);//"cartonBox" is added to the list
                 cartonBox = new CartonBox(eggs[j].color);//a new one is created with the color of the egg in that position in the array
-                cartonBox.addEggs(eggs[j]); // We invoke the function, passing it as a parameter an egg of the respective position of the array
+                cartonBox.addEggs(eggs[j]); // invoke the function, passing it as a parameter an egg of the respective position of the array
                 eggs[j] = null;
             }
 
@@ -48,7 +50,7 @@ public class Farmer {
 
     public void showBoxes() {//the "cartonBoxes" list is printed
         cartonBoxes.forEach(maple -> {
-            System.out.println(maple.toString());
+            logger.info("\n" + maple.toString());
         });
     }
 
